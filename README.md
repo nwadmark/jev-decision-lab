@@ -2,6 +2,14 @@
 
 An approachable, browser-based workbench for exploring **Jev**, TypeSafe AI's decision model. It helps you turn a sample situation into clear, structured questions, then try those questions in the [TypeSafe Jev Playground](https://console.typesafe.ai/playground).
 
+## Try it now
+
+[**Open the live Jev Decision Lab ↗**](https://nwadmark.github.io/jev-decision-lab/)
+
+No repository setup is needed to use the live workbench.
+
+![Jev Decision Lab homepage preview](./assets/jev-decision-lab-homepage.jpg)
+
 ## What is Jev?
 
 A useful first approximation is to think of Jev as a **classifier for decisions inside software**. A chatbot is built to write a response for a person to read. Jev is built to evaluate a situation and return a structured answer that software can use.
@@ -34,23 +42,29 @@ A product or support team could evaluate each feedback message with focused ques
 
 Your application can use the structured answers to route straightforward cases, flag uncertain ones for a person, and group feedback themes over time. Jev can help classify and triage each message; your product team still sets the taxonomy, review rules, and roadmap priorities. The new **Feedback triage** and **Feedback themes** examples in the workbench show two parts of this flow.
 
-## Try the demo
+## Try the live demo
 
-### Easiest option: open the website
+[**Open Jev Decision Lab**](https://nwadmark.github.io/jev-decision-lab/)
 
-This repository includes a small website, but **GitHub does not run `index.html` when you open its file page**. To make the workbench easy to use without downloading files or opening code, turn on GitHub Pages once:
+Visitors can use the public link directly. No GitHub account, download, or branch creation is needed. Pick a scenario, then copy its State and ready-made Questions into the [TypeSafe Playground](https://console.typesafe.ai/playground).
 
-1. Open [this repository's Pages settings](https://github.com/nwadmark/jev-decision-lab/settings/pages).
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose branch **main** and folder **/(root)**, then click **Save**.
-4. Wait for GitHub to show **Your site is live at**, then click **Visit site**.
-5. On the site, choose an example, review or edit its sample State, and copy the State and questions into the matching areas of the [TypeSafe Playground](https://console.typesafe.ai/playground).
+![Jev Decision Lab homepage preview](./assets/jev-decision-lab-homepage.jpg)
 
-After Pages is on, people can use the website directly; they do not need to open `index.html` or use a command line. GitHub Pages makes the site public, so only publish information you intend to share.
+### Run it locally
 
-### Try it locally
+If you prefer not to use the live site, download the repository files and open `index.html` in a modern browser.
 
-If you prefer not to enable Pages, download the repository files and open `index.html` in a modern browser. Choose a scenario, then copy its State and questions into the Playground.
+<details>
+<summary>Maintainer: one-time GitHub Pages setup</summary>
+
+The repository owner configures hosting once. Visitors do not need to do this.
+
+1. Open the repository's **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select the existing **main** branch and **/(root)** folder, then click **Save**. Select `main`; do not create a new branch.
+4. When GitHub shows **Your site is live at**, use **Visit site**. Share that public link with visitors.
+
+</details>
 
 ## Do I have to write JSON?
 
