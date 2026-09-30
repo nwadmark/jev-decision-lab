@@ -42,27 +42,24 @@ A product or support team could evaluate each feedback message with focused ques
 
 Your application can use the structured answers to route straightforward cases, flag uncertain ones for a person, and group feedback themes over time. Jev can help classify and triage each message; your product team still sets the taxonomy, review rules, and roadmap priorities. The new **Feedback triage** and **Feedback themes** examples in the workbench show two parts of this flow.
 
-## Try the live demo
+## Use an example
 
-[**Open Jev Decision Lab**](https://nwadmark.github.io/jev-decision-lab/)
+1. On the live demo above, choose an example that interests you.
+2. Copy its **State** into the Playground's State area.
+3. Copy its **Questions** into the Questions editor.
+4. Run it, then change one fact and compare the result.
 
-Visitors can use the public link directly. No GitHub account, download, or branch creation is needed. Pick a scenario, then copy its State and ready-made Questions into the [TypeSafe Playground](https://console.typesafe.ai/playground).
-
-![Jev Decision Lab homepage preview](./assets/jev-decision-lab-homepage.jpg)
-
-### Run it locally
-
-If you prefer not to use the live site, download the repository files and open `index.html` in a modern browser.
+The workbench prepares the inputs; the Playground runs Jev. If you want to explore without using the live site, download the repository files and open `index.html` in a modern browser.
 
 <details>
 <summary>Maintainer: one-time GitHub Pages setup</summary>
 
-The repository owner configures hosting once. Visitors do not need to do this.
+The repository owner configures hosting once. Visitors do not need a GitHub account or a branch.
 
 1. Open the repository's **Settings → Pages**.
 2. Under **Build and deployment**, choose **Deploy from a branch**.
 3. Select the existing **main** branch and **/(root)** folder, then click **Save**. Select `main`; do not create a new branch.
-4. When GitHub shows **Your site is live at**, use **Visit site**. Share that public link with visitors.
+4. When GitHub shows **Your site is live at**, use **Visit site** and share that public link.
 
 </details>
 
