@@ -23,7 +23,16 @@ Jev supports three question types:
 
 Keep each question focused on one judgment. If a decision depends on several factors, ask about those separately and combine the results using your own rules. Probabilities can help you decide when to automate and when to ask a person to review; they are not a guarantee that an answer is correct.
 
-For TypeSafe's technical description, see the [Jev introduction](https://docs.typesafe.ai/introduction). The [video walkthrough](https://youtu.be/4mTLpuQpB80) is another overview.
+## Customer feedback: a practical use case
+
+A product or support team could evaluate each feedback message with focused questions such as:
+
+- Which queue should receive it: billing, product support, engineering, or product feedback?
+- Is the customer blocked or working against a stated deadline?
+- Does the message describe a defect, a usability problem, or a missing capability?
+- How much concrete evidence does it give for follow-up?
+
+Your application can use the structured answers to route straightforward cases, flag uncertain ones for a person, and group feedback themes over time. Jev can help classify and triage each message; your product team still sets the taxonomy, review rules, and roadmap priorities. The new **Feedback triage** and **Feedback themes** examples in the workbench show two parts of this flow.
 
 ## Try the demo
 
@@ -35,7 +44,7 @@ This repository includes a small website, but **GitHub does not run `index.html`
 2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 3. Choose branch **main** and folder **/(root)**, then click **Save**.
 4. Wait for GitHub to show **Your site is live at**, then click **Visit site**.
-5. On the site, choose a scenario, review or edit its sample State, and copy the State and questions into the matching areas of the [TypeSafe Playground](https://console.typesafe.ai/playground).
+5. On the site, choose an example, review or edit its sample State, and copy the State and questions into the matching areas of the [TypeSafe Playground](https://console.typesafe.ai/playground).
 
 After Pages is on, people can use the website directly; they do not need to open `index.html` or use a command line. GitHub Pages makes the site public, so only publish information you intend to share.
 
@@ -43,13 +52,27 @@ After Pages is on, people can use the website directly; they do not need to open
 
 If you prefer not to enable Pages, download the repository files and open `index.html` in a modern browser. Choose a scenario, then copy its State and questions into the Playground.
 
-No build step, dependency install, or API key is needed for this workbench. It only prepares the inputs: **it does not send a request to Jev or invent sample results.** Run the copied inputs in the Playground to see Jev's answers. Use fictional or sanitized examples when experimenting.
+## Do I have to write JSON?
 
-## Included scenarios
+You can start by writing the question in plain English. In the Playground, that wording goes into the question's `instructions`. The Questions editor also needs a typed structure: the question type (`choice`, `score`, or `noul`) and, for Choice or Score, the allowed options or scoring criteria. A plain sentence by itself is not a complete Questions object.
+
+You do **not** need to create JSON from scratch to try this project. Pick a workbench example and use **Copy questions**; it prepares the formatted JSON for you. If you want to make your own question, first write what you want to know in ordinary language, then use the Playground's **Add Question** control to choose a type and provide the wording and answer choices or criteria.
+
+For example, start with: “Which team should handle this customer message?” Then choose `choice` and define possible answers such as Billing, Product Support, Engineering, Product Feedback, and Human Review.
+
+## Usage and credits
+
+The workbench itself is free to open and does not make Jev requests. Running a request in the Playground uses TypeSafe credits. TypeSafe's terms say promotional credits may be granted at its discretion, so this project does not promise a fixed number of free runs. If you see **“Your organization is out of funds,”** check the organization's **Billing** and **Usage** pages in the console. Only add funds if you choose to continue with paid usage.
+
+No build step, dependency install, or API key is needed for this workbench. It only prepares the inputs: **it does not send a request to Jev or invent sample results.** Run copied inputs in the Playground to get Jev's answers. Use fictional or sanitized examples when experimenting.
+
+## Included examples
 
 - Enterprise assessment triage
 - Security incident triage
-- Product feedback
+- Product feedback and usability
+- Customer feedback triage
+- Feedback themes and product discovery
 - Leadership interview coaching
 
 ## Project files
@@ -62,7 +85,8 @@ No build step, dependency install, or API key is needed for this workbench. It o
 
 - [TypeSafe documentation](https://docs.typesafe.ai/introduction)
 - [TypeSafe quick start](https://docs.typesafe.ai/introduction/quickstart)
-- [TypeSafe AI: Jev overview video](https://youtu.be/4mTLpuQpB80)
+- [TypeSafe AI: Jev and System One models](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+- [TypeSafe customer agreement, section 8.2 (credits)](https://typesafe.ai/legal/mca)
 - [Vercel announcement: Jev on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
 
 This is an independent learning project and is not affiliated with or endorsed by TypeSafe AI.
