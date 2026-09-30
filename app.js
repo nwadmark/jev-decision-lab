@@ -96,6 +96,71 @@ const scenarios = [
     }
   },
   {
+    id: "feedback-triage",
+    label: "Feedback triage",
+    state: "A customer writes: “I was charged twice for this month’s subscription. I checked the invoice and both charges have posted. I need the duplicate payment resolved before our renewal tomorrow.”",
+    hint: "Remove the renewal deadline and duplicate-charge evidence. Notice whether the route and urgency change independently.",
+    questions: {
+      route: {
+        type: "choice",
+        instructions: "Which queue should receive this feedback first?",
+        criteria: {
+          billing_support: "The customer reports a charge, invoice, subscription, payment, or refund issue",
+          product_support: "The customer needs help using an existing product capability",
+          engineering_bug: "The customer provides evidence that a product capability is malfunctioning",
+          product_feedback: "The customer suggests a new or changed capability",
+          human_triage: "The message is unclear or needs a person to determine the right owner"
+        }
+      },
+      urgency: {
+        type: "score",
+        instructions: "How time-sensitive is the reported customer issue, based only on stated evidence?",
+        criteria: [
+          "Routine: no immediate deadline or active blocker is stated",
+          "Soon: a task is affected, but no near-term deadline is stated",
+          "Time-sensitive: the customer states a near-term deadline",
+          "Immediate review: an essential service is blocked or significant ongoing harm is stated"
+        ]
+      },
+      explicit_blocker: {
+        type: "noul",
+        instructions: "Does the customer explicitly say that an important task or service is currently blocked?"
+      }
+    }
+  },
+  {
+    id: "feedback-themes",
+    label: "Feedback themes",
+    state: "A customer writes: “We export the same project report every Friday and email it to 40 partners. There is no scheduled export, so someone on my team downloads it and rebuilds the email by hand each week.”",
+    hint: "Replace the specific recurring workflow with a vague comment such as “reporting could be better.” Does the evidence score change?",
+    questions: {
+      theme: {
+        type: "choice",
+        instructions: "What is the clearest product feedback theme in this message?",
+        criteria: {
+          missing_capability: "The customer describes a needed capability that is not available",
+          usability: "The customer describes difficulty finding or using an available capability",
+          defect_or_reliability: "The customer says an existing capability is broken, slow, or unreliable",
+          other_or_unclear: "The message does not clearly fit the other themes"
+        }
+      },
+      evidence_strength: {
+        type: "score",
+        instructions: "How much concrete evidence does the message provide for product follow-up?",
+        criteria: [
+          "Very little: general opinion with no specific need",
+          "Some: a need is stated, but context or impact is unclear",
+          "Strong: a specific recurring workflow or friction is described",
+          "Detailed: the workflow, frequency, and affected people are stated"
+        ]
+      },
+      recurring_workflow: {
+        type: "noul",
+        instructions: "Does the customer explicitly describe a recurring workflow?"
+      }
+    }
+  },
+  {
     id: "coaching",
     label: "Leadership coaching",
     state: "Interview answer: “I set up weekly meetings with Product, Design, and Engineering and created a shared document for dependencies. The team delivered the launch on time.”",
